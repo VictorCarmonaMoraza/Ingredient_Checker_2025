@@ -1,26 +1,14 @@
 
-#Creacion de una tupla
-frutas =("apple","banana","cherry")
-print(frutas)
+##Ingredientes: Lo definiremos como un conjunto
+#harina,azucar, mantequilla
+ingredients ={"flour","sugar","butter"}
 
-#Imprimir ultimo elemento de una tupla
-print(frutas[-1])
-print(frutas[2])
+print(ingredients)
 
-coordinates= (10,20,30)
-x,y,z = coordinates
-'''print(x)
-print(y)
-print(z)'''
+#agregar huevos
+ingredients.add("eggs")
+print(ingredients)
 
-#Operaciones con tuplas
-print(len(frutas))
-
-#Concatnear dos tuplas que son las de frutas y la de naranja
-print(frutas +("naranja",))
-
-## Conjuntos
-frutas2 ={'a','b','c','c'}
-print(frutas2)
-
-
+#Eliminar un ingrediente
+ingredients.remove("flour")
+print(ingredients)
