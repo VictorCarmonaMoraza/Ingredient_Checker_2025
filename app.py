@@ -1,31 +1,32 @@
 
-##Ingredientes: Lo definiremos como un conjunto
-#harina,azucar, mantequilla
-ingredients ={"flour","sugar","butter"}
 
-print(ingredients)
+##Define los ingredinetes de la receta
+## Step 1 : Define the recipeingredients
+recipe_ingredients = {"flour","sugar","butter","eggs","milk"}
 
-#agregar huevos
-ingredients.add("eggs")
-print(ingredients)
+##Que ingredientes tienes
+##step 2 : Get user input for available ingredients
+user_input =input("Enter the ingredients you have(separated by commas):")
 
-#Eliminar un ingrediente
-ingredients.remove("flour")
-print(ingredients)
-
-#Los conjuntos no tendran nunca duplicados
-##Operaciones
-conjunto_a = {"flour","sugar","butter"}
-conjunto_b = {"sugar","eggs"}
-
-#Unir dos conjuntos
-print(conjunto_a | conjunto_b)  # {'eggs', 'flour', 'sugar', 'butter'}
-
-#interseccion de dos conjuntos
-print(conjunto_a & conjunto_b)  #{'sugar'}
-
-#diferencia entre dos conjuntos
-print(conjunto_a-conjunto_b)  #{'butter', 'flour'}
+##Creacion del conjunto
+##user_ingredients = set(user_input.split(", "))
+user_ingredients = {item.strip() for item in user_input.split(",")}
 
 
+##Comparar los ingredientes
+#step 3: Compare ingredients
+missing_ingredients = recipe_ingredients - user_ingredients
+extra_ingredients = user_ingredients-recipe_ingredients
 
+##Mostrar resultado
+## step 4: Display Results
+print("\n--- Ingredient Check Result ---")
+if missing_ingredients:
+    print(f"you are missing the following ingredients: {', '.join(missing_ingredients)}")
+else:
+    print("You have all the ingredients needed")
+
+if extra_ingredients:
+    print(f"you have extra ingredients: {', '.join(extra_ingredients)}")
+else:
+    print("you have all the ingredient needed")
